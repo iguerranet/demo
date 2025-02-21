@@ -8,29 +8,27 @@ public class DemoApplication {
 
 	// No Collections, No Arrays, No Strings, No Google
 	public static int reverse(int original) {
-		int hundreds = original / 100;
-		int i = original;
-		i = original % 100;
-		int tens =  (original) - (hundreds * 10);
-		tens -=  (hundreds * 10);
-
-		//System.out.println(i);
-		 hundreds = original / 100;
-		 tens =  original / 10;
-		int singles =  original % 10;
-		System.out.println(hundreds);
-		System.out.println(tens);
-		System.out.println(singles);
-		return 0;
+		long reversedNum = 0;
+		long input_long = original;
+	
+		while (input_long != 0) {
+			reversedNum = reversedNum * 10 + input_long % 10;
+			input_long = input_long / 10;
+		}
+	
+		if (reversedNum > Integer.MAX_VALUE || reversedNum < Integer.MIN_VALUE) {
+			throw new IllegalArgumentException();
+		}
+		return (int) reversedNum;
 	}
    
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 		System.out.println("Hello World");
 
-		reverse(123);      // 321
-		//reverse(404);      // 404
-		//reverse(82736736); // 63763728
+		System.out.println(reverse(123));      // 321
+		System.out.println(reverse(404));      // 404
+		System.out.println(reverse(82736736)); // 63763728
 		 
 	}
 
