@@ -24,11 +24,9 @@ public class DemoApplication {
    
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		System.out.println("Hello World");
-
-		System.out.println(reverse(123));      // 321
-		System.out.println(reverse(404));      // 404
-		System.out.println(reverse(82736736)); // 63763728
+		System.out.println("Reversing number: 321 -> " + reverse(123));      // 321
+		System.out.println("Reversing number: 404 -> " + reverse(404));      // 404
+		System.out.println("Reversing number: 82736736 -> " + reverse(82736736)); // 63763728
 		 
 	}
 
